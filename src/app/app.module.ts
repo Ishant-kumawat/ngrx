@@ -8,6 +8,7 @@ import { CounterdisplayComponent } from './component/counterdisplay/counterdispl
 import { StoreModule } from '@ngrx/store';
 import { count } from 'rxjs';
 import { counterReducer } from './shared/store/counter.reducer';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,9 @@ import { counterReducer } from './shared/store/counter.reducer';
     AppRoutingModule,
     StoreModule.forRoot({counter: counterReducer})
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
