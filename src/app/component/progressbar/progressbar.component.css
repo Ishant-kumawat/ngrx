@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.steps {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    width: 60px;
+}
+
+.step {
+    width: 10px;
+    height: 10px;
+    /* background: radial-gradient(circle, #ff0000 50%, transparent 50%); */
+    border: 2px solid #000000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.show-check-mark::before {
+    content: "\2714";
+    font-size: 9px;
+    top: -4.5px;
+    margin-left: 1.5px;
+    position: absolute;
+}
+
+.step.completed {
+    background: #065a02;
+}
+
+.progress,
+.progress-second {
+    position: absolute;
+    /* width: calc(100% - 48px);  */
+    height: 48%;
+    border-bottom: 2px solid #000000;
+    z-index: -1;
+    left: 13px;
+}
+
+.container.two-steps .progress,
+.container.two-steps .progress-second {
+    width: calc(70% - 30px);
+}
+
+.container.three-or-more-steps .progress,
+.container.three-or-more-steps .progress-second {
+    width: calc(100% - 48px);
+}
+
+.percent {
+    position: absolute;
+    width: 0;
+    height: 100%;
+    z-index: 1;
+}
+
+.progress-second {
+    left: 36px;
+}
+
+.transparent {
+    background: transparent;
+}
+
+.green {
+    background: radial-gradient(circle, #006A00 50%, transparent 50%);
+}
+
+.red {
+    background: radial-gradient(circle, #f90101 50%, transparent 50%);
+}
+
+.reset-color {
+    background: transparent;
+}

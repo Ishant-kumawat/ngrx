@@ -5,6 +5,7 @@ import {MatInputModule} from "@angular/material/input"
 import {MatSelectModule} from "@angular/material/select"
 import {MatFormFieldModule} from "@angular/material/form-field"
 import {MatDialogModule} from "@angular/material/dialog"
+import {MatIconModule} from '@angular/material/icon';
 
 
 
@@ -15,7 +16,8 @@ import {MatDialogModule} from "@angular/material/dialog"
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatIconModule
  ]
 })
 export class MaterialModule{}

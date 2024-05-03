@@ -1,0 +1,29 @@
+<div class="container" [ngClass]="{'two-steps': stepIds.length === 2, 'three-or-more-steps': stepIds.length >= 3}">
+    <div *ngIf="showProgressBar" class="progressbar">
+        <div class="progress">
+            <div class="percent"></div>
+        </div>
+        <div *ngIf="stepIds.length >= 3" class="progress-second">
+            <div class="percent"></div>
+        </div>
+    </div>
+
+    <div class="steps">
+        <div *ngFor="let step of stepIds; let i = index" class="step" [id]="step"
+            [class.transparent]="isFirstStepTransparent" [class.red]="isThirdStepRed" [class.green]="isSecondStepGreen"
+            [class.show-check-mark]="isCheckMarkVisible">
+        </div>
+    </div>
+</div>
+
+<div class="input-container">
+    <input type="number" [(ngModel)]="inputValue" placeholder="Enter a number...">
+    <button (click)="handleInput()">Submit</button>
+</div>
+
+<br>
+
+<div class="input-container">
+    <input type="number" [(ngModel)]="inputValues" placeholder="Enter a number...">
+    <button (click)="applyStyles()">Submit</button>
+</div>

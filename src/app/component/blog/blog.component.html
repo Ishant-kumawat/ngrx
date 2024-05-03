@@ -1,19 +1,21 @@
 <div style="text-align: center;">
-<h1>Technalogy</h1>
+    <h1>Technalogy</h1>
 
-<button (click)="Addblog()" mat-raised-button color="primary"> Add Blog</button>
-<mat-card *ngFor="let item of bloglist">
-<mat-card-header>
-    <h1>{{item.title}}</h1>
-    <div style="text-align: right; width: 100%;">
-  <button (click)="EditBlog(item.id)"mat-raised-button color="primary">Edit</button>
-  <button (click)="RemoveBlog(item.id)"mat-raised-button color="accent">Delete</button>
+    <button (click)="Addblog()" mat-raised-button color="primary"> Add Blog</button>
+    <mat-card *ngFor="let item of bloglist">
+        <mat-card-header>
+            <h1>{{item.title}}</h1>
+            <div style="text-align: right; width: 100%;">
+                <button (click)="EditBlog(item.id)" mat-raised-button color="primary"><mat-icon
+                        fontIcon="edit"></mat-icon></button>
+                <button (click)="RemoveBlog(item.id)" mat-raised-button color="accent"><mat-icon
+                        fontIcon="delete"></mat-icon></button>
 
-    </div>
-</mat-card-header>
-<mat-card-content>
-    <p>{{item.description}}</p>
-</mat-card-content>
+            </div>
+        </mat-card-header>
+        <mat-card-content>
+            <p>{{item.description}}</p>
+        </mat-card-content>
 
-</mat-card>
+    </mat-card>
 </div>

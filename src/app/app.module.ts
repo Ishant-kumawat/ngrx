@@ -17,6 +17,7 @@ import { blogReducer } from './shared/store/Blog/Blog.reducers';
 import { AppState } from './shared/store/Global/App.state';
 import { BlogComponent } from './component/blog/blog.component';
 import { AddblogComponent } from './component/addblog/addblog.component';
+import { ProgressbarComponent } from './component/progressbar/progressbar.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AddblogComponent } from './component/addblog/addblog.component';
     CounterdisplayComponent,
     CustomnumberComponent,
     BlogComponent,
-    AddblogComponent
+    AddblogComponent,
+    ProgressbarComponent
   ],
   imports: [
     BrowserModule,
