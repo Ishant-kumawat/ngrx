@@ -14,10 +14,15 @@ import { getcostumname } from 'src/app/shared/store/counter.selector';
   styleUrl: './customnumber.component.css'
 })
 export class CustomnumberComponent implements OnInit {
-  constructor(private store : Store<AppstateModel>){}
+
+  tabs: any[] = [0,5];
+  inputValue: number;
+
+  constructor(private store : Store<AppstateModel> ){this.inputValue = this.tabs.length;}
   ngOnInit(): void {
     this.customsubsciption=this.store.select(getcostumname).subscribe(data => {
       this.costumname= data;
+      console.log(this.inputValue)
      })
   }
 

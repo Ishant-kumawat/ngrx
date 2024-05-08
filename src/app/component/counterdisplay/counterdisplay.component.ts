@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { countermodel } from 'src/app/shared/model/counter.model';
@@ -11,7 +11,7 @@ import { getcounter } from 'src/app/shared/store/counter.selector';
 })
 export class CounterdisplayComponent implements OnInit, OnDestroy {
   constructor(private store: Store<{ counter: countermodel }>) { }
-
+  @Input() inputValue: number | undefined;
 
   ngOnDestroy(): void {
     if (this.customsubsciption

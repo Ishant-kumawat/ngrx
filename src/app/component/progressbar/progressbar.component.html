@@ -3,23 +3,25 @@
         <div class="progress">
             <div class="percent"></div>
         </div>
-        <div *ngIf="stepIds.length >= 3" class="progress-second">
+        <div *ngIf="stepIds.length >= 3"class="progress-second"  >
             <div class="percent"></div>
         </div>
     </div>
 
-    <div class="steps">
-        <div *ngFor="let step of stepIds; let i = index" class="step" [id]="step"
-            [class.transparent]="isFirstStepTransparent" [class.red]="isThirdStepRed" [class.green]="isSecondStepGreen"
-            [class.show-check-mark]="isCheckMarkVisible">
+    <div [ngClass]="{'steps2': isTwoSelected, 'steps': !isTwoSelected}">
+        <div *ngFor="let step of stepIds; let i = index" class="step" [id]="step" style="background-color: rgb(255, 255, 255);"
+             [class.transparent]="isFirstStepTransparent"
+             [class.red]="isThirdStepRed" 
+             [class.green]="isSecondStepGreen" 
+             [class.show-check-mark]="isCheckMarkVisible">
         </div>
     </div>
 </div>
 
-<div class="input-container">
+ <!-- <div class="input-container">
     <input type="number" [(ngModel)]="inputValue" placeholder="Enter a number...">
     <button (click)="handleInput()">Submit</button>
-</div>
+</div> -->
 
 <br>
 

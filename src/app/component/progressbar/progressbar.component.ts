@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, QueryList, ViewChildren } from '@angular/core';
 
 @Component({
   selector: 'app-progressbar',
@@ -8,7 +8,7 @@ import { Component, ElementRef, OnInit, QueryList, ViewChildren } from '@angular
 export class ProgressbarComponent implements OnInit {
   @ViewChildren('steps') stepElements!: QueryList<ElementRef>;
 
-  inputValue: number | undefined;    //(this.tabs.length) value alocation for dynamic creating on harvey balls. assump tabs [] created
+  @Input() inputValue: number | undefined;    //(this.tabs.length) value alocation for dynamic creating on harvey balls. assump tabs [] created
   inputValues: number | undefined;
   showProgressBar: boolean = true;
 
@@ -17,14 +17,17 @@ export class ProgressbarComponent implements OnInit {
   isThirdStepRed: boolean = false;
   isCheckMarkVisible: boolean = false;
   stepIds: string[] = [];
+  isTwoSelected: boolean = false;
 
   ngOnInit(): void {
+    this.inputValue;
     this.updateSteps();
+        this.applyStyles();
+
   }
 
   handleInput(): void {
     this.updateSteps();
-    this.applyStyles();
   }
 
   updateSteps(): void {
@@ -35,6 +38,12 @@ export class ProgressbarComponent implements OnInit {
       }
     }
     this.showProgressBar = this.stepIds.length > 1;
+    if(this.inputValue == 2){
+      this.isTwoSelected = true;
+    }else{
+      this.isTwoSelected = false;
+    }
+    
   }
 
   applyStyles(): void {
